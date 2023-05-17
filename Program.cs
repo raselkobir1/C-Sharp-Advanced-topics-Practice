@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C_Sharp_Practice.ExtensionMethods;
+using System;
 
 namespace MyConsoleApp
 {
@@ -32,18 +33,28 @@ namespace MyConsoleApp
             //Action<int, int>ActionDelegateEx = (a,b) => Console.WriteLine( a + b);
             //ActionDelegateEx.Invoke(20, 30); 
 
-            List<string> names = new List<string>();
-            names.Add("Md Rasel");
-            names.Add("Kabir sing");
-            names.Add("Md Jamal");
+            //List<string> names = new List<string>();
+            //names.Add("Md Rasel");
+            //names.Add("Kabir sing");
+            //names.Add("Md Jamal");
 
-            Predicate<string> predicate = MuslimNameChecks; 
-            //var result = names.FindAll(predicate);
-            var result = names.FindAll(x=> x.Contains("Md"));
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
-            }
+            //Predicate<string> predicate = MuslimNameChecks; 
+            ////var result = names.FindAll(predicate);
+            //var result = names.FindAll(x=> x.Contains("Md"));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //------------Extension methods practice-------------------
+            Person person = new Person();
+            person.Id = 90070;
+            person.Name = "Rasel";
+            person.Details = "Software engineer at US Bangla group";
+            var details = person.GetPersonsInfo();
+            Console.WriteLine(details); 
+            Console.ReadKey();  
+
         }
 
         static bool MuslimNameChecks(string name)
