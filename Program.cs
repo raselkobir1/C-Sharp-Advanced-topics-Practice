@@ -30,7 +30,7 @@ namespace MyConsoleApp
             //Console.WriteLine("Result is :" +res);    
 
             //Action<int, int>ActionDelegateEx = (a,b) => Console.WriteLine( a + b);
-            //ActionDelegateEx.Invoke(20, 30);
+            //ActionDelegateEx.Invoke(20, 30); 
 
             List<string> names = new List<string>();
             names.Add("Md Rasel");
