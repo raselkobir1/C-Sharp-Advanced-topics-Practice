@@ -1,4 +1,5 @@
 ﻿using C_Sharp_Practice.ExtensionMethods;
+using C_Sharp_Practice.Reflection;
 using System;
 
 namespace MyConsoleApp
@@ -47,13 +48,25 @@ namespace MyConsoleApp
             //}
 
             //------------Extension methods practice-------------------
-            Person person = new Person();
-            person.Id = 90070;
-            person.Name = "Rasel";
-            person.Details = "Software engineer at US Bangla group";
-            var details = person.GetPersonsInfo();
-            Console.WriteLine(details); 
-            Console.ReadKey();  
+            //Person person = new Person();
+            //person.Id = 90070;
+            //person.Name = "Rasel";
+            //person.Details = "Software engineer at US Bangla group";
+            //var details = person.GetPersonsInfo();
+            //Console.WriteLine(details); 
+            //Console.ReadKey();  
+
+            //-------------Reflection practice-------------
+            var typeForClass = new TestReflection("Kabir");
+            Type StudentNametype = typeForClass.GetType();
+            Console.WriteLine("Student name type : "+StudentNametype);
+            Console.WriteLine("Student name type : "+StudentNametype.Assembly);
+             var list =StudentNametype.GetMethods();
+            foreach (var item in list)
+            {
+                Console.WriteLine("method name : " + item);
+
+            }
 
         }
 
